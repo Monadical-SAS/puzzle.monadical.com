@@ -1,6 +1,6 @@
-<center>
+<div align="center">
 
-<a href="https://monadical.com"><img src="https://monadical.com/static/logo-blue.png" style="height: 200px"></a>
+<a href="https://monadical.com"><img src="https://monadical.com/static/logo-blue.png" height="200px"></a>
     
 # Monadical PyCon.CO 2020 Coding Challenge 
 
@@ -17,7 +17,7 @@
 <a href="http://puzzle.monadical.com/" class="btn btn-success btn-lg">Submit your answers &nbsp;<i class="fa fa-angle-double-right"></i></a>
     
 <hr>
-</center>
+</div>
 
 
 [TOC]
@@ -113,7 +113,7 @@ def puzzle(encoded_message):
 
 ---
 
-<img src="/uploads/upload_b3c7f37b990ab0b265906ce95c44679a.png" style="border-radius: 8px; box-shadow: 4px 4px 4px rgba(0,0,0,0.07)">
+<img src="/uploads/upload_b3c7f37b990ab0b265906ce95c44679a.png" width="400px">
 
 ---
 
