@@ -7,7 +7,7 @@
 <hr/>
     
 
-<b> 🏆 We're giving out prizes to the winners on Sunday (Feb 9th) @ 1pm: 🏆</b>
+<b> 🏆 We're giving out prizes to the winners on Sunday (Feb 9th, 2020) @ 1pm: 🏆</b>
 
 The fastest solution (problem #1 & #2)<br/>
 The shortest solution (problem #1 & #2)<br/>
