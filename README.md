@@ -4,15 +4,14 @@
     
 # Monadical PyCon.CO 2020 Coding Challenge 
 
-
 <hr/>
     
 
 <b> 🏆 We're giving out prizes to the winners on Sunday (Feb 9th) @ 1pm: 🏆</b>
 
-1. the fastest solution (problem #1 & #2)<br/>
-2. the shortest solution (problem #1 & #2)<br/>
-3. the craziest solution (problem #1 & #2)<br/>
+The fastest solution (problem #1 & #2)<br/>
+The shortest solution (problem #1 & #2)<br/>
+The craziest solution (problem #1 & #2)<br/>
 
 
 <a href="http://puzzle.monadical.com/" class="btn btn-success btn-lg">Submit your answers &nbsp;<i class="fa fa-angle-double-right"></i></a>
@@ -20,10 +19,6 @@
 <hr>
 </div>
 
-
-[TOC]
-
----
 
 ## Problem 1 (Easier)
 
@@ -114,7 +109,7 @@ def puzzle(encoded_message):
 
 ---
 
-<img src="/uploads/upload_b3c7f37b990ab0b265906ce95c44679a.png" width="400px">
+<img src="https://docs.monadical.com/uploads/upload_b3c7f37b990ab0b265906ce95c44679a.png" width="400px">
 
 ---
 
