@@ -1,0 +1,92 @@
+#!/usr/bin/env python3
+
+import os
+import sys
+import json
+from datetime import datetime
+
+from flask import Flask, render_template, redirect
+from flask_wtf import FlaskForm
+from wtforms import StringField, BooleanField
+from wtforms import validators
+
+os.makedirs("data/submissions", exist_ok=True)
+
+### Config
+app = Flask(__name__)
+
+app.secret_key = b'\xaf\xf42\xfbf\xb3Ek,m8z\xf8s"\xa8'
+
+
+class PuzzleSubmissionForm(FlaskForm):
+    name = StringField('name', [validators.InputRequired(), validators.Length(min=3)])
+    email = StringField('email', [validators.InputRequired(), validators.Length(min=3)])
+    phone = StringField('phone')
+
+    question1 = StringField('question1')
+    question2 = StringField('question2')
+
+    prize_consent = BooleanField('prize_consent')
+    hiring_consent = BooleanField('hiring_consent')
+
+
+@app.route('/favicon.ico')
+def favicon():
+    return redirect("https://monadical.com/favicon.ico")
+
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    form = PuzzleSubmissionForm()
+    if form.name.data or form.email.data:
+        assert form.email.data, 'Email must not be empty.'
+        assert form.question1.data or form.question2.data, 'At least one question must be answered.'
+
+        # print(form.name, form.email, form.phone, form.prize_consent, form.hiring_consent)
+        # print(form.question1)
+        # print(form.question2)
+        ts = int(datetime.now().timestamp())
+        data = {
+            'ts': str(ts),
+            'name': str(form.name.data),
+            'email': str(form.email.data),
+            'phone': str(form.phone.data),
+            'prize_consent': form.prize_consent.data,
+            'hiring_consent': form.hiring_consent.data,
+            'question1': str(form.question1.data),
+            'question2': str(form.question2.data),
+        }
+        with open(f'data/submissions/{ts}.json', 'w', encoding='utf-8') as f:
+            json.dump(data, f, indent=4)
+
+        with open(f'data/submissions/{ts}.txt', 'w', encoding='utf-8') as f:
+            f.write('''--------------------------------------------------------------------------------
+Submitted Time: {ts}
+Name:  {name}
+Email: {email}
+Phone: {phone}
+Wants a prize: {prize_consent}
+Wants a job:   {hiring_consent}
+--------------------------------------------------------------------------------
+### Question 1
+--------------------------------------------------------------------------------
+
+{question1}
+
+--------------------------------------------------------------------------------
+### Question 2
+--------------------------------------------------------------------------------
+
+{question2}
+
+--------------------------------------------------------------------------------
+'''.format(**data))
+
+        return 'success'
+
+    return render_template('index.html', form=form)
+
+
+if __name__ == '__main__':
+    # run the flask http server
+    app.run(host='0.0.0.0')
+
