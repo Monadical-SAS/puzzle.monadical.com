@@ -10,9 +10,9 @@
 
 <b> 🏆 We're giving out prizes to the winners on Sunday (Feb 9th) @ 1pm: 🏆</b>
 
- 1. the fastest solution (problem #1 & #2)<br/>
- 2. the shortest solution (problem #1 & #2)<br/>
- 3. the craziest solution (problem #1 & #2)<br/>
+1. the fastest solution (problem #1 & #2)<br/>
+2. the shortest solution (problem #1 & #2)<br/>
+3. the craziest solution (problem #1 & #2)<br/>
 
 
 <a href="http://puzzle.monadical.com/" class="btn btn-success btn-lg">Submit your answers &nbsp;<i class="fa fa-angle-double-right"></i></a>
